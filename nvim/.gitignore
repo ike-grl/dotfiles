@@ -1,0 +1,11 @@
+# Ignore swap files
+*.swp
+
+# Ignore session files
+session.vim
+
+# Ignore plugin specific files
+plugged/
+
+# Ignore compiled config files
+plugin/packer_compiled.lua 
