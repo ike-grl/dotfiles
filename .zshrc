@@ -102,14 +102,49 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Rye
 source "$HOME/.rye/env"
+
+# Atuin
+. "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
+
+# Jupyter 
+export PATH="$PATH:~/.local/bin"
+
+# Deno 
 export PATH="$HOME/.local/bin:$PATH"
 export DENO_INSTALL="$HOME/.deno"
+
+# Node
 export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
-export PATH="$HOME/.config/conventional:$PATH"
-alias conv="conventional.sh"
+
+# Nice syntax highlighting, QOL
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-. "$HOME/.atuin/bin/env"
+# Not totally sure?
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Kitty-specific 
+# For gnuplot support
+function iplot {
+    cat <<EOF | gnuplot
+    set terminal pngcairo enhanced font 'Fira Sans,10'
+    set autoscale
+    set samples 1000
+    set output '|kitten icat --stdin yes'
+    set object 1 rectangle from screen 0,0 to screen 1,1 fillcolor rgb"#fdf6e3" behind
+    plot $@
+    set output '/dev/null'
+EOF
+}
+
+# Search history via grep e.g. `hgrep 'ssh'`
+alias hgrep='history | grep'
+
+# Source the `.zshrc` e.g. `reload`
+alias reload='source ~/.zshrc'
+
+# Auto-ssh with kitten config
+alias ssh='kitty +kitten ssh'
