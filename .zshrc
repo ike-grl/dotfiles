@@ -107,8 +107,8 @@ source $ZSH/oh-my-zsh.sh
 source "$HOME/.rye/env"
 
 # Atuin
-eval "$(atuin init zsh)"
 . "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh)"
 
 # Jupyter 
 export PATH="$PATH:~/.local/bin"
@@ -139,3 +139,12 @@ function iplot {
     set output '/dev/null'
 EOF
 }
+
+# Search history via grep e.g. `hgrep 'ssh'`
+alias hgrep='history | grep'
+
+# Source the `.zshrc` e.g. `reload`
+alias reload='source ~/.zshrc'
+
+# Auto-ssh with kitten config
+alias ssh='kitty +kitten ssh'
