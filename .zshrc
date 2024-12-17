@@ -148,3 +148,5 @@ alias reload='source ~/.zshrc'
 
 # Auto-ssh with kitten config
 alias ssh='kitty +kitten ssh'
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
