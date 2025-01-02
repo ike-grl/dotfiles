@@ -1,1 +1,5 @@
-/Users/isaacchasse/.config/bottom/bottom.toml
+[flags]
+battery = true
+
+[styles]
+theme = "gruvbox"
