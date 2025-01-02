@@ -148,5 +148,10 @@ alias reload='source ~/.zshrc'
 
 # Auto-ssh with kitten config
 alias ssh='kitty +kitten ssh'
+
+# Alias that cd's to dotfiles
+alias cdf='cd ~/.dotfiles'
+
+# uv shell completions
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
