@@ -60,7 +60,7 @@ return {
         -- <leader>pn -> Searches the ~/.nvim directory (useful for editing your neovim config)
         vim.keymap.set('n', '<leader>pn', function()
             builtin.find_files {
-                cmd = vim.fn.stdpath("config")
+                cmd = vim.fn.stdpath("~/.config/nvim")
             }
         end)
     end
