@@ -7,8 +7,14 @@ brew "duckdb"
 brew "fd"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GitHub command-line tool
+brew "gh"
 # Git extension for versioning large files
 brew "git-lfs"
+# Command-driven, interactive function plotting
+brew "gnuplot"
+# Like cURL, but for gRPC
+brew "grpcurl"
 # Improved top (interactive process viewer)
 brew "htop"
 # Lightweight and flexible command-line JSON processor
@@ -19,6 +25,8 @@ brew "neofetch"
 brew "neovim"
 # Platform built on V8 to build network applications
 brew "node@20"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Programmatically correct mistyped console commands
@@ -27,6 +35,8 @@ brew "thefuck"
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Command-line client for WebSockets
+brew "websocat"
 # HTTP benchmarking tool
 brew "wrk"
 # Fish shell like syntax highlighting for zsh
