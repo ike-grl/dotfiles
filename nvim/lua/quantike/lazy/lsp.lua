@@ -35,8 +35,8 @@ return {
             vim.keymap.set("n", "<leader>gT", vim.lsp.buf.type_definition, opts)
             vim.keymap.set("n", "<leader>K", vim.lsp.buf.hover, opts)
 
-            vim.keymap.set("n", "<space>cr", vim.lsp.buf.rename, opts)
-            vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, opts)
+            vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
+            vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
         end
 
         -- Capabilities configuration for completion
