@@ -161,6 +161,16 @@ alias ssh='ssh_with_kitty'
 # Alias that cd's to dotfiles
 alias cdf='cd ~/.dotfiles'
 
+# Alias that cd's to ~/Coding
+alias cdc='cd ~/Coding'
+
+# Alias that cd's to ~/Coding
+alias cda='cd ~/Coding/Andi'
+
+# Alias that cd's to ~/Coding
+alias cdq='cd ~/Coding/Quantike'
+#
 # uv shell completions
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
+eval "$(rbenv init -)"
