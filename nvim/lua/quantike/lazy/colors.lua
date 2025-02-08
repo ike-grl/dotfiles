@@ -13,7 +13,7 @@ return {
     priority = 1000,
     config = function()
         require 'gruvbox'.setup {
-            transparent_bg = true,
+            transparent_mode = true,
         }
         require 'gruvbox'.load()
         ColorMyPencils()  -- Apply the transparency settings
