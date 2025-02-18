@@ -1,10 +1,12 @@
 return {
+    -- DO NOT NEED TO MIGRATE?
     {
         "nvim-lua/plenary.nvim",
         name = "plenary"
     },
-
+    -- MIGRATED
     "eandrju/cellular-automaton.nvim",
+    -- MIGRATED
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -19,12 +21,14 @@ return {
             }
         end
     },
+    -- MIGRATED
     {
       'numToStr/Comment.nvim',
       config = function()
           require('Comment').setup()
       end
     },
+    -- MIGRATED
     {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
