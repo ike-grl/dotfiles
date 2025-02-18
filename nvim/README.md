@@ -4,11 +4,11 @@ Here's an outline of my neovim configuration
 
 ```bash
 .
-├── README.md  # <- YOU ARE HERE
-├── init.lua   # Sets up everything in `lua/plugins/`
+├── README.md       # <- YOU ARE HERE
+├── init.lua        # Sets up everything in `lua/plugins/`
 ├── lazy-lock.json  # Lockfile, NEVER edit manually
-└── lua  # Directory for lua stuffs, just plugins at the moment
-    ├── plugins  # Self explanatory
+└── lua             # Directory for lua stuffs, just plugins at the moment
+    ├── plugins     # Self explanatory
     │   ├── automaton.lua    # For fun
     │   ├── comment.lua      # For easy commenting in code
     │   ├── completions.lua  # For nice looking and easy completions
