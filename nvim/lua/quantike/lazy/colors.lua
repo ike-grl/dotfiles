@@ -6,16 +6,15 @@ function ColorMyPencils(color)
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
-
 return {
-    'ellisonleao/gruvbox.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-        require 'gruvbox'.setup {
-            transparent_mode = true,
-        }
-        require 'gruvbox'.load()
-        ColorMyPencils()  -- Apply the transparency settings
-    end
+	"ellisonleao/gruvbox.nvim",
+	lazy = false,
+	priority = 1000,
+	config = function()
+		require("gruvbox").setup({
+			transparent_mode = true,
+		})
+		require("gruvbox").load()
+		ColorMyPencils() -- Apply the transparency settings
+	end,
 }
