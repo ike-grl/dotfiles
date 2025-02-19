@@ -65,3 +65,31 @@ Be sure to check on
 ```
 
 for any language server weirdness that may pop-up.
+
+## Using Distant
+
+When you need to edit a remote file, you can use `distant`. 
+
+On your remote machine, download and install Distant.
+
+```bash
+curl -L https://sh.distant.dev | sh -s -- --on-conflict overwrite
+```
+
+Now, connect to your remote machine while **on your local machine**
+
+```bash
+:DistantLaunch ssh://<user>@<host>
+```
+
+> Tip: you can also spawn the server on a specified port by adding `distant.args="--port <PORT>"`
+
+On your machine you can now run
+
+```bash
+:DistantOpen $HOME/path/to/file.txt
+```
+
+This reads the remote file into your Neovim buffer and sends local changes back to the remote server.
+
+Nifty.
