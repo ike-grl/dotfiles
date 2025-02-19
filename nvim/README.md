@@ -13,6 +13,7 @@ Here's an outline of my neovim configuration
     │   ├── comment.lua      # For easy commenting in code
     │   ├── completions.lua  # For nice looking and easy completions
     │   ├── conform.lua      # For format on save
+    │   ├── flash.lua        # For jumping to marks within a file
     │   ├── harpoon.lua      # For ThePrimeagen 🙏
     │   ├── lsp.lua          # For language servers
     │   ├── statusline.lua   # For swag
