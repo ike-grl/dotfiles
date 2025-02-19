@@ -13,6 +13,7 @@ Here's an outline of my neovim configuration
     │   ├── comment.lua      # For easy commenting in code
     │   ├── completions.lua  # For nice looking and easy completions
     │   ├── conform.lua      # For format on save
+    │   ├── distant.lua      # For ssh editing
     │   ├── flash.lua        # For jumping to marks within a file
     │   ├── harpoon.lua      # For ThePrimeagen 🙏
     │   ├── lsp.lua          # For language servers
@@ -21,7 +22,8 @@ Here's an outline of my neovim configuration
     │   ├── theme.lua        # For Gruvbox, the 🐐
     │   ├── transparent.lua  # For transparent backgrounds, so I can copy code easier
     │   ├── treesitter.lua   # For code
-    │   └── webdevicons.lua  # For aesthetics
+    │   ├── webdevicons.lua  # For code
+    │   └── whichkey.lua     # For reminding me to actually use the keybinds I wrote
     ├── plugins.lua  # Sets up plugins
     └── vimopts.lua  # All my random vim options and mappings
 ```
