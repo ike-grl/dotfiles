@@ -73,13 +73,13 @@ When you need to edit a remote file, you can use `distant`.
 On your remote machine, download and install Distant.
 
 ```bash
-curl -L https://sh.distant.dev | sh -s -- --on-conflict overwrite
+ssh <USER>@<HOST> 'curl -L https://sh.distant.dev | sh -s -- --on-conflict overwrite'
 ```
 
 Now, connect to your remote machine while **on your local machine**
 
 ```bash
-:DistantLaunch ssh://<user>@<host>
+:DistantLaunch ssh://<USER>@<HOST>
 ```
 
 > Tip: you can also spawn the server on a specified port by adding `distant.args="--port <PORT>"`
