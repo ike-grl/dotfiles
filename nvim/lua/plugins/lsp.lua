@@ -16,6 +16,7 @@ return {
 					"lua_ls",
 					"rust_analyzer",
 					"pyright",
+					"zls",
 				},
 			})
 		end,
@@ -54,6 +55,10 @@ return {
 			})
 			lspconfig.pyright.setup({
 				capabilities = capabilities,
+			})
+			lspconfig.zls.setup({
+				capabilities = capabilities,
+				cmd = { "zls" },
 			})
 		end,
 	},
