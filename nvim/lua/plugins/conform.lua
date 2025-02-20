@@ -9,6 +9,7 @@ return {
 				-- go = { "gofumpt", "golines", "goimports-reviser" },
 				yaml = { "yamlfmt" },
 				json = { "prettier" },
+				markdown = { "prettier" },
 			},
 			{
 				format_on_save = {

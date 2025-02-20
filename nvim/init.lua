@@ -36,6 +36,7 @@ config.setup({
 		"python",
 		"zig",
 		"sql",
+		"markdown",
 	},
 	-- sql being slow on large files :(
 	highlight = {
