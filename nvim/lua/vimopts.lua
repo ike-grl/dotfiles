@@ -34,7 +34,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "120"
 
 -- lsp setup
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
