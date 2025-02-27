@@ -159,7 +159,7 @@ ssh_with_kitty() {
 alias ssh='ssh_with_kitty'
 
 # Alias that cd's to dotfiles
-alias cdf='cd ~/.dotfiles'
+alias dotfiles='cd ~/.dotfiles'
 
 # Alias that cd's to ~/Coding
 alias cdc='cd ~/Coding'
@@ -169,7 +169,10 @@ alias cda='cd ~/Coding/Andi'
 
 # Alias that cd's to ~/Coding
 alias cdq='cd ~/Coding/Quantike'
-#
+
+# Alias to take me to obsidian
+alias obsidian='cd /Users/isaacchasse/Documents/Obsidian'
+
 # uv shell completions
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
