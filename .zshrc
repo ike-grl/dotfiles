@@ -146,18 +146,6 @@ alias hgrep='history | grep'
 # Source the `.zshrc` e.g. `reload`
 alias reload='source ~/.zshrc'
 
-# Function to run ssh with kitty kitten if TERM is 'xterm-kitty'
-ssh_with_kitty() {
-  if [[ "$TERM" == "xterm-kitty" ]]; then
-    kitty +kitten ssh "$@"
-  else
-    ssh "$@"
-  fi
-}
-
-# Alias to use the function
-alias ssh='ssh_with_kitty'
-
 # Alias that cd's to dotfiles
 alias dotfiles='cd ~/.dotfiles'
 
