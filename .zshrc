@@ -159,7 +159,7 @@ alias cda='cd ~/Coding/Andi'
 alias cdq='cd ~/Coding/Quantike'
 
 # Alias to take me to obsidian
-alias obsidian='cd /Users/isaacchasse/Documents/Obsidian | nvim .'
+alias obsidian='cd /Users/isaacchasse/Documents/Obsidian && nvim .'
 
 # uv shell completions
 eval "$(uv generate-shell-completion zsh)"
