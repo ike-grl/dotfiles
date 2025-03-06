@@ -165,3 +165,6 @@ alias obsidian='cd /Users/isaacchasse/Documents/Obsidian && nvim .'
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 eval "$(rbenv init -)"
+
+# Get last short hash
+alias shorthash='git rev-parse --short HEAD | tr -d '\n' | tee >(pbcopy)'
