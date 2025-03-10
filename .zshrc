@@ -168,3 +168,4 @@ eval "$(rbenv init -)"
 
 # Get last short hash
 alias shorthash='git rev-parse --short HEAD | tr -d '\n' | tee >(pbcopy)'
+export PATH="/opt/homebrew/Cellar/zigup/2025.01.02/bin:$PATH"
