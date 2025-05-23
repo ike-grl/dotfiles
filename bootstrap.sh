@@ -33,5 +33,13 @@ mkdir "$HOME/Coding/Andi"
 mkdir "$HOME/Coding/Valkyrie"
 mkdir "$HOME/Coding/Quantike"
 
+# Install some of the manual things here
+#
+# Atuin
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+
+# uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
 # Run this last to source ZSH changes and reload the shell
 source ./.zshrc
