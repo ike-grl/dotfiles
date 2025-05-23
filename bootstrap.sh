@@ -26,12 +26,7 @@ brew tap homebrew/bundle
 brew bundle --file ./Brewfile
 
 # Create a projects directories
-mkdir "$HOME/Coding"
-
-# Create Code subdirectories
-mkdir "$HOME/Coding/Andi"
-mkdir "$HOME/Coding/Valkyrie"
-mkdir "$HOME/Coding/Quantike"
+mkdir "$HOME/Developer"
 
 # Install some of the manual things here
 #
