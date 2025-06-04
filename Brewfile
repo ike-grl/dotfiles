@@ -1,4 +1,3 @@
-tap "homebrew/bundle"
 # Load/unload environment variables based on $PWD
 brew "direnv"
 # Embeddable SQL OLAP Database Management System
