@@ -144,10 +144,10 @@ alias hgrep='history | grep'
 alias reload='source ~/.zshrc'
 
 # Alias that cd's to dotfiles
-alias dotfiles='cd ~/.dotfiles'
+alias dot='cd ~/.dotfiles'
 
 # Alias that cd's to ~/Coding
-alias cdev='cd ~/Developer'
+alias dev='cd ~/Developer'
 
 # uv shell completions
 eval "$(uv generate-shell-completion zsh)"
