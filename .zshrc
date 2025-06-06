@@ -163,3 +163,14 @@ export PATH="$PATH:/Users/isaacchasse/.lmstudio/bin"
 # Enable ZSH-Autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# AWS profile switcher
+alias profile="export AWS_PROFILE=\$(aws configure list-profiles | fzf --prompt \"Choose active AWS profile:\")"
+
+# Showing the Active AWS Profile in shell prompt
+function aws_prof {
+  local profile="${AWS_PROFILE:=default}"
+
+  echo "%{$fg_bold[blue]%}aws:(%{$fg[yellow]%}${profile}%{$fg_bold[blue]%})%{$reset_color%} "
+}
+
+RPROMPT='$(aws_prof)'
