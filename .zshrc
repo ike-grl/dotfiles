@@ -174,3 +174,6 @@ function aws_prof {
 }
 
 RPROMPT='$(aws_prof)'
+
+# Alias to activate a venv
+alias activate="source .venv/bin/activate"
