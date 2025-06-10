@@ -6,8 +6,6 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "ruff" },
 				rust = { "rustfmt" },
-				-- go = { "gofumpt", "golines", "goimports-reviser" },
-				yaml = { "yamlfmt" },
 				json = { "prettier" },
 				markdown = { "prettier" },
 			},
