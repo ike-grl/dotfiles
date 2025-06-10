@@ -26,6 +26,7 @@ Then when you first run `nvim` it should bootstrap lazy.nvim install and set up 
 
 ## TODO List
 
-- [ ] AWS Account switching
-- [ ] AWS Account shell prompt
+- [x] AWS Account switching
+- [x] AWS Account shell prompt
 - [ ] Direnv config not tracked
+- [ ] Make AWS Account shell prompt prettier
