@@ -163,16 +163,39 @@ export PATH="$PATH:/Users/isaacchasse/.lmstudio/bin"
 # Enable ZSH-Autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# AWS profile switcher
-alias profile="export AWS_PROFILE=\$(aws configure list-profiles | fzf --prompt \"Choose active AWS profile:\")"
+# fzf settings
+export FZF_DEFAULT_OPTS='
+  --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f
+  --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54
+'
 
-# Showing the Active AWS Profile in shell prompt
-function aws_prof {
-  local profile="${AWS_PROFILE:=default}"
+# AWS profile switcher with SSO login by default
+function profile() {
+    # pick a profile, if you cancel this won't force a login
+    local choice 
+    choice=$(aws configure list-profiles | fzf --prompt "Choose active AWS profile:") || return
+    export AWS_PROFILE="${choice:-default}"
 
-  echo "%{$fg_bold[blue]%}aws:(%{$fg[yellow]%}${profile}%{$fg_bold[blue]%})%{$reset_color%} "
+    # unless you passed --no-login, do an SSO login
+    if [[ "$1" != "--no-login" && "$1" != "-n" ]]; then
+        echo "Logging in to AWS SSO for profile: $AWS_PROFILE"
+        aws sso login --profile "$AWS_PROFILE"
+    else
+        echo "Skipping SSO login for profile: $AWS_PROFILE"
+    fi
 }
 
+# usage: 
+#   profile             -> switch profile and login via SSO
+#   profile --no-login  -> switch profile only
+#           -n 
+
+# prompt (optional): show current AWS profile at the right
+#   uses oh-my-zsh btw
+function aws_prof {
+  local profile="${AWS_PROFILE:-default}"
+  echo "%{$fg_bold[blue]%}aws:(%{$fg[yellow]%}${profile}%{$fg_bold[blue]%})%{$reset_color%} "
+}
 RPROMPT='$(aws_prof)'
 
 # Alias to activate a venv
