@@ -171,17 +171,37 @@ export FZF_DEFAULT_OPTS='
 
 # AWS profile switcher with SSO login by default
 function profile() {
-    # pick a profile, if you cancel this won't force a login
+    # check that there is a config file
+    local aws_config_file="$HOME/.aws/config"
+    
+    # ensure AWS config exists
+    if [[ ! -f "$aws_config_file" ]]; then 
+        echo "AWS config file not found at $aws_config_file"
+        return 1
+    fi
+
+    # pick a profile via fzf
     local choice 
     choice=$(aws configure list-profiles | fzf --prompt "Choose active AWS profile:") || return
     export AWS_PROFILE="${choice:-default}"
 
-    # unless you passed --no-login, do an SSO login
-    if [[ "$1" != "--no-login" && "$1" != "-n" ]]; then
+    # propogate any custom env_name
+    local env_name
+    env_name=$(aws configure get env_name --profile "$AWS_PROFILE")
+    export ENV_NAME="$env_name"
+
+    # if a user asked to skip a login
+    if [[ "$1" == "--no-login" || "$1" == "-n" ]]; then
+        echo "Skipping SSO login for profile: $AWS_PROFILE"
+        return
+    fi
+
+    # check whether credentials are still valid
+    if aws sts get-caller-identity --profile "$AWS_PROFILE" >/dev/null 2>&1; then
+        echo "AWS credentials valid for profile: $AWS_PROFILE"
+    else 
         echo "Logging in to AWS SSO for profile: $AWS_PROFILE"
         aws sso login --profile "$AWS_PROFILE"
-    else
-        echo "Skipping SSO login for profile: $AWS_PROFILE"
     fi
 }
 
@@ -190,11 +210,12 @@ function profile() {
 #   profile --no-login  -> switch profile only
 #           -n 
 
-# prompt (optional): show current AWS profile at the right
+# prompt (optional): show current AWS env and profile at the right
 #   uses oh-my-zsh btw
 function aws_prof {
   local profile="${AWS_PROFILE:-default}"
-  echo "%{$fg_bold[blue]%}aws:(%{$fg[yellow]%}${profile}%{$fg_bold[blue]%})%{$reset_color%} "
+  local env="${ENV_NAME:-none}"
+  echo "%{$fg_bold[blue]%}aws:(%{$fg[yellow]%}${profile}@${env}%{$fg_bold[blue]%})"
 }
 RPROMPT='$(aws_prof)'
 
