@@ -213,10 +213,13 @@ function profile() {
 # prompt (optional): show current AWS env and profile at the right
 #   uses oh-my-zsh btw
 function aws_prof {
-  local profile="${AWS_PROFILE:-default}"
+  # don’t show for default or unset
+  [[ -z "$AWS_PROFILE" || "$AWS_PROFILE" == default ]] && return
+
   local env="${ENV_NAME:-none}"
-  echo "%{$fg_bold[blue]%}aws:(%{$fg[yellow]%}${profile}@${env}%{$fg_bold[blue]%})"
+  echo "%{$fg_bold[blue]%}aws:(%{$fg[yellow]%}${AWS_PROFILE}@${env}%{$fg_bold[blue]%})"
 }
+
 RPROMPT='$(aws_prof)'
 
 # Alias to activate a venv
