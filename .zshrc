@@ -163,6 +163,9 @@ export PATH="$PATH:/Users/isaacchasse/.lmstudio/bin"
 # Enable ZSH-Autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Set default editor to neovim
+export EDITOR="nvim"
+
 # fzf settings
 export FZF_DEFAULT_OPTS='
   --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f
@@ -224,3 +227,9 @@ RPROMPT='$(aws_prof)'
 
 # Alias to activate a venv
 alias activate="source .venv/bin/activate"
+
+# opencode
+export PATH=/Users/ike/.opencode/bin:$PATH
+
+# zoxide
+eval "$(zoxide init zsh)"
