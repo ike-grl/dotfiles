@@ -7,11 +7,30 @@ return {
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		},
 		config = function()
-			require("telescope").setup({
-				extensions = {
-					fzf = {},
-				},
-			})
+			require('telescope').setup {
+              defaults = {
+                -- global defaults here
+              },
+              pickers = {
+                find_files = {
+                  theme = "ivy",
+                  -- any picker-specific overrides, e.g. previewer = false
+                },
+                live_grep = {
+                  theme = "dropdown",
+                  -- other opts...
+                },
+                diagnostics = {
+                  theme = "cursor",
+                  previewer = false
+                },
+                -- etc.
+              },
+              extensions = {
+                fzf = {},
+                ["ui-select"] = { require("telescope.themes").get_dropdown() },
+              },
+            }
 
 			require("telescope").load_extension("fzf")
 
