@@ -233,3 +233,6 @@ export PATH=/Users/ike/.opencode/bin:$PATH
 
 # zoxide
 eval "$(zoxide init zsh)"
+
+# duckdb
+export PATH='/Users/ike/.duckdb/cli/latest':$PATH
