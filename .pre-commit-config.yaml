@@ -1,0 +1,10 @@
+repos:
+  - repo: local
+    hooks:
+      - id: brew-bundle-dump
+        name: Update Brewfile
+        entry: brew bundle dump --force --describe
+        language: system
+        files: ^Brewfile$
+        pass_filenames: false
+        always_run: true
