@@ -8,6 +8,8 @@ brew "bottom"
 brew "cmake"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+# Diff that understands syntax
+brew "difftastic"
 # Load/unload environment variables based on $PWD
 brew "direnv"
 # Embeddable SQL OLAP Database Management System
@@ -22,8 +24,12 @@ brew "gh"
 brew "git-lfs"
 # Command-driven, interactive function plotting
 brew "gnuplot"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
 # Like cURL, but for gRPC
 brew "grpcurl"
+# Development framework for multimedia applications
+brew "gstreamer"
 # Improved top (interactive process viewer)
 brew "htop"
 # Command-line benchmarking tool
@@ -40,8 +46,6 @@ brew "neofetch"
 brew "neovim"
 # Platform built on V8 to build network applications
 brew "node@20"
-# Package compiler and linker metadata toolkit
-brew "pkgconf"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
 # Protocol buffers (Google's data interchange format)
@@ -66,6 +70,8 @@ brew "wget"
 brew "wrk"
 # Programming language designed for robustness, optimality, and clarity
 brew "zig"
+# Fast static site generator in a single binary with everything built-in
+brew "zola"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
 # Fish shell like syntax highlighting for zsh
@@ -76,6 +82,8 @@ brew "hashicorp/tap/terraform"
 brew "seatedro/glimpse/glimpse"
 # Command-line interface for 1Password
 cask "1password-cli"
+# Developer platform
+cask "dotnet-sdk"
 cask "font-fira-mono"
 cask "font-fira-mono-nerd-font"
 # Replacement for Docker Desktop
